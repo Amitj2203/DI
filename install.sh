@@ -5,10 +5,11 @@ minikube start
 
 sleep 60
 
-docker build -t hello-app .
-
 # To point your shell to minikube's docker-daemon, run:
 eval $(minikube -p minikube docker-env)
+
+# Build Docker Image
+docker build -t hello-app .
 
 # Run a pod with the http endpoint
 kubectl apply -f hello_pod.yaml
